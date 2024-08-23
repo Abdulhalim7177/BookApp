@@ -1,0 +1,27 @@
+﻿@page
+@model BookApp.Pages.EditBookModel
+@{
+}
+<div>   
+    <h1>Edit Book</h1>
+    <form method="post" id="bookForm" name="bookForm">
+        <input type="text" name="BookId" value="@Model.BookDb.BookId" hidden />
+
+        <label>Title</label>
+        <input type="text" name="BookTitle" value="@Model.BookDb.Title" class="form-control" autofocus required />
+
+        <label>ISBN</label>
+        <input type="text" name="BookIsbn" value="@Model.BookDb.Isbn" class="form-control" required />
+        
+        <label>Publisher</label>
+        <input type="text" name="BookPublisher" value="@Model.BookDb.PublisherName" class="form-control" required />
+        
+        <label>Author</label>
+        <input type="text" name="BookAuthor" value="@Model.BookDb.AuthorName" class="form-control" required />
+        
+        <label>Category</label>
+        <input type="text" name="BookCategory" value="@Model.BookDb.CategoryName" class="form-control" required />
+
+        <input type="submit" value="Save" id="SaveButton" class="btn btn-outline-primary" />
+    </form>
+</div>

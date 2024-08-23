@@ -1,0 +1,40 @@
+﻿@page
+@model BookApp.Pages.BooksModel
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div>
+    <h1> Books</h1>
+    Below are all the books available in the store: <br />
+    <table class="table shadow ">
+        <thead class="table-dark">
+            <tr>
+                <th>BookId</th>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Publisher</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.books)
+            {
+                <tr>
+                    <td>@book.BookId</td>
+                    <td><a class="fw-bolder" href="./EditBook?bookid=@book.BookId">@book.Title</a></td>
+                    <td>@book.Isbn</td>
+                    <td>@book.PublisherName</td>
+                    <td>@book.AuthorName</td>
+                    <td>@book.CategoryName</td>
+                    <td><a href="./DeleteBook?bookid=@book.BookId" class="btn btn-danger" role="button">Delete Book</a></td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="./NewBook" class="btn btn-info text-white fw-bolder" role="button">New Book</a>
+
+</div>

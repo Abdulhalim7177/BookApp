@@ -1,0 +1,28 @@
+﻿@page
+@model BookApp.Pages.NewBookModel
+@{
+    ViewData["Title"] =  "New Book";
+}
+<div>
+    <h1> New Book</h1>
+    <form name="BookForm" id="BookForm" method="post">
+
+        <label>Title</label>
+        <input type="text" name="BookTitle" class="form-control input-group-lg" autofocus required />
+
+        <label>ISBN</label>
+        <input type="text" name="ISBN" class="form-control input-group-lg"  required />
+
+        <label>Publisher</label>
+        <input type="text" name="BookPublisher" class="form-control input-group-lg"  required />
+
+        <label>Author</label>
+        <input type="text" name="BookAuthor" class="form-control input-group-lg"  required />
+    
+        <label>Category</label>
+        <input type="text" name="Category" class="form-control input-group-lg"  required />
+        <br />
+        <input id="SaveButton" type="submit" value="Save" class="btn btn-primary" />
+
+    </form>
+</div>
